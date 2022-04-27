@@ -24,13 +24,16 @@ Route::get('hola' , function(){
 Route::get('paises' , function(){ 
     $paises =[
         "Colombia" => [
-            "cap" => "Bogota",
-            "mon" => "Peso",
+            "cap" => "Bogotá",
+            "mon" => "Peso Colombiano",
             "pob" => "51.6",
             "ciudades" => [
-                "Medallin",
+                "Medellín",
                 "Cali" , 
-                "Barranquilla"
+                "Barranquilla",
+                "Cartagena",
+                "Villavicencio",
+                "Chocó"
             ]
         ],
         "Ecuador" => [
@@ -44,8 +47,8 @@ Route::get('paises' , function(){
         ],
         "Brasil" => [
             "cap" => "Brasilia",
-            "mon" => "Dolar",
-            "pob" => "20",
+            "mon" => "Real Brasileño",
+            "pob" => "212.6",
             "ciudades" => [
                 "Río de Janeiro",
                 "Manaos",
@@ -54,12 +57,25 @@ Route::get('paises' , function(){
             ]   
         ],
         "Argentina" => [
-            "cap" => "Quito",
-            "mon" => "Dolar",
-            "pob" => "20",
+            "cap" => "Buenos Aires",
+            "mon" => "Peso Argentino",
+            "pob" => "45.38",
             "ciudades" => [
-                "Cuenca",
-                "Guayaquil"
+                "Córdoba",
+                "Rosario",
+                "Mar de plata"
+            ]   
+        ],
+        "Uruguay" => [
+            "cap" => "Montevideo",
+            "mon" => "Peso Uruguayo",
+            "pob" => "3.4",
+            "ciudades" => [
+                "Maldonado",
+                "Rivera",
+                "Paysandú",
+                "Artigas",
+                "Canelones"
             ]   
         ]
     ];

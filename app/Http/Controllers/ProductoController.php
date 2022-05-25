@@ -21,7 +21,7 @@ class ProductoController extends Controller
         $productos = Producto::all();
         //mostrar la vista del catalogo, llevandole los productos
         return view('productos.index')
-                ->with('prouctos' , $productos);
+                ->with('productos' , $productos);
 
     }
 

@@ -14,11 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        if(!session('cart')){
-            echo "no hay items en el carrito";
-        }else{
-            return view('cart.index');
-        }
+
+        return view('cart.index');
         
     }
 
@@ -42,9 +39,11 @@ class CartController extends Controller
     {
         //estructura de producto
         $producto = [  [
-            "prod_id" => $request -> prod_id,
-            "cantidad" => $request -> cantidad,
-            "nombre_prod" => Producto::find($request->$prod_id)->nombre
+            "prod_id" => $request ->prod_id,
+            "cantidad" => $request ->cantidad,
+            "precio" => $request -> precio,
+            "nombre_prod" => Producto::find($request->prod_id)->nombre,
+            "precio_prod" => Producto::find($request->prod_id)->precio
          ]
         ];
 
@@ -53,7 +52,7 @@ class CartController extends Controller
 
             $aux[] = $producto;
             //1. el primer producto en el carrito
-            session(['cart' => $producto]);
+            session(['cart' => $aux]);
 
         }else{
             //- extraer los datos del carrito de la variable sesion
@@ -115,5 +114,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         session()->forget('cart');
+        return redirect('cart');
     }
 }
